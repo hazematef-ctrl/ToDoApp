@@ -10,7 +10,7 @@ export const LoginPage = () => {
     navigate("/home");
   }
   return (
-    <div className="w-120 h-100 text-center mb-50">
+    <div className="min-h-screen w-full text-center mb-50">
       <h1 className="text-[50px] font-bold tracking-widest">My Tasks</h1>
       <form
         className="mt-15 "
