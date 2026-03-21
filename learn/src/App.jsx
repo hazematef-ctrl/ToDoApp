@@ -7,7 +7,7 @@ import { Route , Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="min-h-screen w-full font-sans bg-gray-50">
+    <div className="min-h-screen w-full font-sans bg-radial-[at_20%_12%] from-white to-zinc-900 to-75%">
         {/* <LoginPage/> */}
         <Routes>
           <Route path='/' element={<LoginPage></LoginPage>}/>
