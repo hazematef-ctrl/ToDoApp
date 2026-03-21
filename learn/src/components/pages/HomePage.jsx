@@ -4,12 +4,23 @@ import { GrAdd } from "react-icons/gr";
 import { MdDoneOutline } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
 import { MdOutlineModeEdit } from "react-icons/md";
+import { IoArrowBackCircle } from "react-icons/io5";
 import { AddTaskModal } from "../modals/AddTaskModal";
 
 export const HomePage = () => {
   const [showTask, setShowTask] = useState(false);
-  const [task, setTask] = useState({ title: "", description: "" });
+  const [task, setTask] = useState({
+    title: "",
+    description: "",
+    completed: false,
+  });
   const [tasks, setTasks] = useState([]);
+
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)),
+    );
+  };
 
   return (
     <div className="h-screen w-full relative overflow-hidden">
@@ -77,15 +88,28 @@ export const HomePage = () => {
           tasks.map((task) => (
             <div
               key={task.id}
-              className="bg-white p-4 rounded-xl mb-3 text-black border border-white/10 flex justify-between"
+              className={`p-4 rounded-xl mb-3 border transition-all duration-300 flex justify-between items-center ${
+                task.completed
+                  ? "bg-green-500 border-green-600 text-white"
+                  : "bg-white border-gray-200 text-black"
+              }`}
             >
               <div>
                 <h1 className="font-bold text-lg">{task.title}</h1>
                 <p className="text-sm opacity-70">{task.description}</p>
               </div>
               <div>
-                <button className="bg-black text-white text-2xl p-1.5 m-1 md:p-3 md:m-2.5 rounded-full md:cursor-pointer">
-                  <MdDoneOutline />
+                <button
+                  onClick={() => {
+                    toggleTask(task.id);
+                  }}
+                  className="bg-black text-white text-2xl p-1.5 m-1 md:p-3 md:m-2.5 rounded-full md:cursor-pointer"
+                >
+                  {task.completed ? (
+                    <IoArrowBackCircle /> 
+                  ) : (
+                    <MdDoneOutline /> 
+                  )}
                 </button>
                 <button className="bg-black text-white text-2xl p-1.5 m-1 md:p-3 md:m-2.5 rounded-full md:cursor-pointer">
                   <AiFillDelete />
