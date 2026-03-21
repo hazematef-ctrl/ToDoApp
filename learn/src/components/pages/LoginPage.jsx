@@ -13,9 +13,9 @@ export const LoginPage = () => {
 
    
     <div className="min-h-screen w-full text-center mb-50 lg:h-150 lg:w-150 m-auto md:h-130 md:w-130 sm:h-100 sm:w-100 ">
-      <h1 className="text-[50px] font-bold tracking-widest lg:text-[90px]  rounded-b-4xl bg-white/12 p-2">My Tasks</h1>
+      <h1 className="text-[50px] font-bold tracking-widest lg:text-[90px]  p-2">My Tasks</h1>
       <form
-        className="mt-15 "
+        className="mt-15  bg-white/12 p-10 rounded-3xl"
         onSubmit={(e) => {
           e.preventDefault();
           handleLogin();
