@@ -22,43 +22,43 @@ export const RegisterPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full text-center mb-50 lg:h-150 lg:w-150 m-auto md:h-130 md:w-130 sm:h-100 sm:w-100">
-      <h1 className="text-[50px] font-bold tracking-widest lg:text-[90px] p-2">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-8 text-center">
+      <h1 className="text-5xl md:text-[90px] font-bold tracking-widest p-2">
         My Tasks
       </h1>
       <form
-        className="mt-15 bg-white/12 p-10 rounded-3xl"
+        className="mt-8 bg-white/12 p-8 rounded-3xl w-full max-w-sm"
         onSubmit={handleRegister}
       >
         <h2 className="text-2xl lg:text-[40px]">Register</h2>
-        <p className="mr-28.5 font-extralight mt-10 text-[1rem] opacity-50 w-full ">
+        <p className="font-extralight mt-6 text-[1rem] opacity-50">
           Create your account to get started
         </p>
         <input
           type="text"
           placeholder="Full Name"
-          className="border border-gray-400 w-80 h-10 px-4 rounded-lg mt-4 focus:w-90 duration-300"
+          className="border border-gray-400 w-full h-10 px-4 rounded-lg mt-4 duration-300"
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
         <input
           type="email"
           placeholder="Email"
-          className="border border-gray-400 w-80 h-10 px-4 rounded-lg mt-4 focus:w-90 duration-300"
+          className="border border-gray-400 w-full h-10 px-4 rounded-lg mt-4 duration-300"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
         <input
           type="password"
           placeholder="Password"
-          className="border border-gray-400 w-80 h-10 px-4 rounded-lg mt-4 focus:w-90 duration-300"
+          className="border border-gray-400 w-full h-10 px-4 rounded-lg mt-4 duration-300"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
         <input
           type="password"
           placeholder="Confirm Password"
-          className="border border-gray-400 w-80 h-10 px-4 rounded-lg mt-4 focus:w-90 duration-300"
+          className="border border-gray-400 w-full h-10 px-4 rounded-lg mt-4 duration-300"
           onChange={(e) => setConfirmPassword(e.target.value)}
           value={confirmPassword}
         />
@@ -67,7 +67,7 @@ export const RegisterPage = () => {
         )}
         <button
           type="submit"
-          className="h-10 rounded-lg bg-black text-white mt-6 cursor-pointer w-[60%]"
+          className="w-full h-10 rounded-lg bg-black text-white mt-6 cursor-pointer"
         >
           Register
         </button>

@@ -110,7 +110,7 @@ export const HomePage = () => {
               onChange={(e) => {
                 setTask({ ...task, title: e.target.value });
               }}
-              className="border w-70 rounded-xl mb-3 p-2 focus:w-90 focus:text-left focus:placeholder:text-transparent duration-600 focus:placeholder:duration-300"
+              className="border w-full rounded-xl mb-3 p-2 focus:text-left focus:placeholder:text-transparent duration-300"
             />
             <textarea
               type="text"
@@ -119,7 +119,7 @@ export const HomePage = () => {
               onChange={(e) => {
                 setTask({ ...task, description: e.target.value });
               }}
-              className="border w-70 h-16 rounded-xl mb-3 p-2 focus:w-90 focus:h-20 duration-600 focus:text-left focus:placeholder:text-white focus:placeholder:duration-300"
+              className="border w-full h-16 rounded-xl mb-3 p-2 focus:h-20 duration-300 focus:text-left focus:placeholder:text-white"
             />
           </div>
           <button
@@ -141,7 +141,7 @@ export const HomePage = () => {
       {/* end of mobile view */}
       {/* Task List */}
       <div
-        className="min-h-2.5 p-4 bg-white/40 w-[80%] m-auto rounded-b-2xl max-h-138.5 overflow-y-auto 
+        className="min-h-2.5 p-4 pb-28 md:pb-4 bg-white/40 w-[92%] md:w-[80%] m-auto rounded-b-2xl max-h-[calc(100vh-4rem)] md:max-h-138.5 overflow-y-auto
                 scrollbar-thin scrollbar-thumb-black scrollbar-track-transparent"
       >
         <h1 className="text-center text-4xl font-extrabold p-2.5 mb-2">
